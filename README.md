@@ -25,7 +25,7 @@
      ·
      <strong>Yong Dai</strong>
   </p>
-  📖<a href="">Paper</a> |🏠<a href="https://hithink-ai.github.io/MME-Finance/">Homepage</a></h3>|🤗<a href="https://huggingface.co/datasets/hithink-ai/MME-Finance">Huggingface</a></h3>
+  📖<a href="">Paper</a> |🏠<a href="https://hithink-research.github.io/MME-Finance/">Homepage</a></h3>|🤗<a href="https://huggingface.co/datasets/hithink-ai/MME-Finance">Huggingface</a></h3>
 <div align="center"></div>
 <p align="center">
   <p>
