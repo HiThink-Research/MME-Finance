@@ -79,15 +79,6 @@ python run.py --data MMfin_CN --model Qwen2-VL-2B-Instruct --verbose
 ```
 
 
-## ✒️Citation
-```
-@article{liu2024mmdu,
-  title={MME-Finance: A Multimodal Finance Benchmark for Expert-level Understanding and Reasoning},
-  author={Gan, Ziliang and Lu, Yu and Zang, Dong and Li, Haohan and Liu, Che and Liu, Jian and Wu, Haipang and Fu, Chaoyou and Xu, Zenglin and Zhang, Rongjunchen and Dai, Yong},
-  journal={arXiv preprint arXiv:2406.11833},
-  year={2024}
-}
-```
 ## ✨ Todo
 Currently, we have released 110 samples in both English and Chinese.
 
@@ -125,6 +116,16 @@ Here is the performance of Qwen2-VL-72B on MMfin_CN.
 "Overall","110","74.18181818181819"
 ```
 We will release all the data within approximately a month.
+
+## ✒️Citation
+```
+@article{liu2024mmdu,
+  title={MME-Finance: A Multimodal Finance Benchmark for Expert-level Understanding and Reasoning},
+  author={Gan, Ziliang and Lu, Yu and Zang, Dong and Li, Haohan and Liu, Che and Liu, Jian and Wu, Haipang and Fu, Chaoyou and Xu, Zenglin and Zhang, Rongjunchen and Dai, Yong},
+  journal={arXiv preprint arXiv:2406.11833},
+  year={2024}
+}
+```
 
 ## 📄 License
 ![Code License](https://img.shields.io/badge/Code%20License-Apache_2.0-green.svg) ![Data License](https://img.shields.io/badge/Data%20License-CC%20By%20NC%204.0-red.svg) **Usage and License Notices**: The data and code are intended and licensed for research use only.
