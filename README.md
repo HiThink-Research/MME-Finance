@@ -119,7 +119,7 @@ We will release all the data within approximately a month.
 
 ## ✒️Citation
 ```
-@article{liu2024mmdu,
+@article{
   title={MME-Finance: A Multimodal Finance Benchmark for Expert-level Understanding and Reasoning},
   author={Gan, Ziliang and Lu, Yu and Zang, Dong and Li, Haohan and Liu, Che and Liu, Jian and Wu, Haipang and Fu, Chaoyou and Xu, Zenglin and Zhang, Rongjunchen and Dai, Yong},
   journal={arXiv preprint arXiv:2406.11833},
