@@ -89,6 +89,7 @@ python run.py --data MMfin_CN --model Qwen2-VL-2B-Instruct --verbose
 }
 ```
 ## ✨ Todo
+Currently, we have released 110 samples in both Chinese and English.
 We will release all the data within approximately a month.
 
 ## 📄 License
