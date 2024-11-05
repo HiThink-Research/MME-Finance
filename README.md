@@ -45,7 +45,7 @@ Benchmarks from general fields often fail to measure the performance of multimod
 ## 🛠️ Usage
 
 <!-- ### Judgement -->
-We have integrated MMfin into the VLMEvalKit framework. For the environment configuration and the use of AIP, please refer to [VLMEvalKit](https://github.com/open-compass/VLMEvalKit).
+We have integrated MMfin into the VLMEvalKit framework. For the environment configuration and the use of API, please refer to [VLMEvalKit](https://github.com/open-compass/VLMEvalKit).
 Regarding the data, first of all, you should download the `MMfin.tsv` and `MMfin_CN.tsv` files, as well as the relevant financial images. The folder structure is shown as follows:
 ```
 ├─ datasets
