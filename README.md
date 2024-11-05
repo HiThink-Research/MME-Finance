@@ -39,21 +39,7 @@ Benchmarks from general fields often fail to measure the performance of multimod
 ## 💡 Highlights
 - 🔥 <strong>Bilingual multimodal financial benchmark:</strong> MME-Finance is the first Bilingual multimodal financial benchmark which comprises 1,171 English and 1,103 Chinese open-ended questions, covering diverse financial image types and various multimodal capabilities. 
 - 🔥 <strong>Evaluation strategy: </strong> MME-Finance proposes a Elaborate evaluation strategy that taking image into consideration, and has a high consistency with humans. It can serve as a reference for evaluating MLLMs for other works.
-- 🔥 <strong>Evaluation strategy: </strong>We conduct extensive evaluation on 19 MLLMs based on MME-Finance, revealing critical insights about the strengths and shortcomings of the current MLLMs in financial applications.
-<!-- ## 💎 MME-Finance Benchmark
-Although many LVLMs now claim to handle tens of thousands, hundreds of thousands, or even millions of tokens in length, their actual performance significantly declines in real-world applications as the number of images or the length of the context increases. Both the dialogue quality and image recognition capabilities of LVLMs deteriorate notably under these conditions.
-
-To evaluate the multi-image multi-turn dialogue capabilities of existing models, we have developed the MMDU Benchmark. Our benchmark comprises **110 high-quality multi-image multi-turn dialogues with more than 1600 questions**, each accompanied by detailed long-form answers. Previous benchmarks typically involved only single images or a small number of images, with fewer rounds of questions and short-form answers. However, MMDU significantly increases the number of images, the number of question-and-answer rounds, and the in-context length of the Q&A. The questions in MMUD **involve 2 to 20 images**, with **an average image&text token length of 8.2k tokens**, and **a maximum image&text length reaching 18K tokens**, presenting significant challenges to existing multimodal large models. 
-
-<a href="">
-  <img src="asset/statistic.png" alt="Logo">
-</a> -->
-
-<!-- ## 🎆 MME-Finance Instruct Tuning Dataset
-In the MME-Finance, 
-<a href="">
-  <img src="asset/construction.png" alt="Logo">
-</a> -->
+- 🔥 <strong>Valuable insights: </strong>We conduct extensive evaluation on 19 MLLMs based on MME-Finance, revealing critical insights about the strengths and shortcomings of the current MLLMs in financial applications.
 
 
 ## 🛠️ Usage
