@@ -91,7 +91,7 @@ python run.py --data MMfin_CN --model Qwen2-VL-2B-Instruct --verbose
 ## ✨ Todo
 Currently, we have released 110 samples in both English and Chinese.
 
-This is the result of MMfin
+Here is the performance of Qwen2-VL-72B on MMfin.
 ```
 "Category","tot","acc"
 "Accurate Numerical Calculation","10","100.0"
@@ -108,7 +108,7 @@ This is the result of MMfin
 "Overall","110","74.18181818181819"
 ```
 
-This is the result of MMfin_CN
+Here is the performance of Qwen2-VL-72B on MMfin_CN.
 ```
 "Category","tot","acc"
 "Accurate Numerical Calculation","10","80.0"
