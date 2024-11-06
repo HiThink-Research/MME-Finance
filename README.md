@@ -25,7 +25,7 @@
      ·
      <strong>Yong Dai</strong>
   </p>
-  📖<a href="">Paper</a> |🏠<a href="https://hithink-research.github.io/MME-Finance/">Homepage</a></h3>|🤗<a href="https://huggingface.co/datasets/hithink-ai/MME-Finance">Huggingface</a></h3>
+  📖<a href="https://arxiv.org/abs/2411.03314">Paper</a> |🏠<a href="https://hithink-research.github.io/MME-Finance/">Homepage</a></h3>|🤗<a href="https://huggingface.co/datasets/hithink-ai/MME-Finance">Huggingface</a></h3>
 <div align="center"></div>
 <p align="center">
   <p>
@@ -105,10 +105,10 @@ We will release all the data within approximately a month.
 
 ## ✒️Citation
 ```
-@article{
+@article{gan2024woodpecker,
   title={MME-Finance: A Multimodal Finance Benchmark for Expert-level Understanding and Reasoning},
-  author={Gan, Ziliang and Lu, Yu and Zang, Dong and Li, Haohan and Liu, Che and Liu, Jian and Wu, Haipang and Fu, Chaoyou and Xu, Zenglin and Zhang, Rongjunchen and Dai, Yong},
-  journal={arXiv preprint arXiv:2406.11833},
+  author={Gan, Ziliang and Lu, Yu and Zang, Dong and Li, Haohan and Liu, Che and Liu, Jian and Liu, Ji and Wu, Haipang and Fu, Chaoyou and Xu, Zenglin and Zhang, Rongjunchen and Dai, Yong},
+  journal={arXiv preprint arXiv:2411.03314},
   year={2024}
 }
 ```
