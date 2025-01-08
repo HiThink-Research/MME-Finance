@@ -35,6 +35,7 @@ Benchmarks from general fields often fail to measure the performance of multimod
 
 ## 📢 News
 - 🚀 [11/05/2024] We released <strong>MME-Finance</strong> benchmark, a bilingual multimodal benchmark in financial domain.
+- 🚀 [01/08/2024] We have released all samples in both English and Chinese.
 
 ## 💡 Highlights
 - 🔥 <strong>Bilingual multimodal financial benchmark:</strong> MME-Finance is the first Bilingual multimodal financial benchmark which comprises 1,171 English and 1,103 Chinese open-ended questions, covering diverse financial image types and various multimodal capabilities. 
@@ -63,10 +64,6 @@ export LMUData="The path of the datasets"
 python run.py --data MMfin --model Qwen2-VL-2B-Instruct --verbose
 python run.py --data MMfin_CN --model Qwen2-VL-2B-Instruct --verbose
 ```
-
-
-## ✨ Todo
-Currently, we have released 110 samples in both English and Chinese.
 
 Here is the performance of Qwen2-VL-72B on MMfin.
 ```
@@ -102,6 +99,10 @@ Here is the performance of Qwen2-VL-72B on MMfin_CN.
 "Overall","110","74.18181818181819"
 ```
 We will release all the data within approximately a month.
+
+
+## ✨ Todo
+
 
 ## ✒️Citation
 ```
