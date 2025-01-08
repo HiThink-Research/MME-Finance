@@ -65,45 +65,6 @@ python run.py --data MMfin --model Qwen2-VL-2B-Instruct --verbose
 python run.py --data MMfin_CN --model Qwen2-VL-2B-Instruct --verbose
 ```
 
-Here is the performance of Qwen2-VL-72B on MMfin.
-```
-"Category","tot","acc"
-"Accurate Numerical Calculation","10","100.0"
-"Entity Recognition","10","68.0"
-"Explain Reason","10","82.0"
-"Financial Knowledge","10","80.0"
-"Image Caption","10","78.0"
-"Investment Advice","10","64.0"
-"Not Applicable","10","90.0"
-"Numerical Calculation","10","48.0"
-"OCR","10","66.0"
-"Risk Warning","10","88.0"
-"Spatial Awareness","10","52.0"
-"Overall","110","74.18181818181819"
-```
-
-Here is the performance of Qwen2-VL-72B on MMfin_CN.
-```
-"Category","tot","acc"
-"Accurate Numerical Calculation","10","80.0"
-"Entity Recognition","10","66.0"
-"Explain Reason","10","78.0"
-"Financial Knowledge","10","86.0"
-"Image Caption","10","100.0"
-"Investment Advice","10","76.0"
-"Not Applicable","10","46.0"
-"Numerical Calculation","10","60.0"
-"OCR","10","82.0"
-"Risk Warning","10","84.0"
-"Spatial Awareness","10","58.0"
-"Overall","110","74.18181818181819"
-```
-We will release all the data within approximately a month.
-
-
-## ✨ Todo
-
-
 ## ✒️Citation
 ```
 @article{gan2024woodpecker,
