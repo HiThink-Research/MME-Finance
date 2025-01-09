@@ -35,7 +35,7 @@ Benchmarks from general fields often fail to measure the performance of multimod
 
 ## 📢 News 
 - 🚀 [11/05/2024] We released <strong>MME-Finance</strong> benchmark, a bilingual multimodal benchmark in financial domain.
-- 🚀 [01/08/2025] <strong>We have released all samples in both English and Chinese.</strong>
+- 🚀 [01/08/2025] <span style="color:red">We have released all samples in both English and Chinese.</span>
 
 ## 💡 Highlights
 - 🔥 <strong>Bilingual multimodal financial benchmark:</strong> MME-Finance is the first Bilingual multimodal financial benchmark which comprises 1,171 English and 1,103 Chinese open-ended questions, covering diverse financial image types and various multimodal capabilities. 
