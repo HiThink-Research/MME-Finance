@@ -33,9 +33,9 @@ In recent years, multimodal benchmarks for general domains have guided the rapid
     
 Benchmarks from general fields often fail to measure the performance of multimodal models in the financial domain, and thus cannot effectively guide the rapid development of large financial models. To promote the development of large financial multimodal models, we propose <strong>MME-Finance</strong>, an bilingual open-ended and practical usage-oriented Visual Question Answering (VQA) benchmark. 
 
-## 📢 News
+## 📢 News 
 - 🚀 [11/05/2024] We released <strong>MME-Finance</strong> benchmark, a bilingual multimodal benchmark in financial domain.
-- 🚀 [01/08/2025] <strong>We have released all samples in both English and Chinese.</strong>
+- 🚀 [01/08/2025] <strong><span style="color:red;">We have released all samples in both English and Chinese.</span></strong>
 
 ## 💡 Highlights
 - 🔥 <strong>Bilingual multimodal financial benchmark:</strong> MME-Finance is the first Bilingual multimodal financial benchmark which comprises 1,171 English and 1,103 Chinese open-ended questions, covering diverse financial image types and various multimodal capabilities. 
