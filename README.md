@@ -21,7 +21,7 @@
      <strong>Rongjunchen Zhang</strong><sup>♠</sup>,
      <strong>Yong Dai</strong>
   </p>
-  <div class="is-size-5 publication-authors" style="margin-top: 10px;">
+  <div class="is-size-5 publication-authors" align="center">
         <span class="author-block">
             <sup>♠</sup>Corresponding author, zhangrongjunchen@myhexin.com
         </span>
