@@ -3,13 +3,9 @@
     <p align="center">
     <strong>Ziliang Gan</strong>
     ·
-    <strong>Yu Lu</strong>
-    ·
     <strong>Dong Zhang</strong>
     ·
     <strong>Haohan Li</strong>
-    ·
-    <strong>Che Liu</strong>
     ·
     <strong>Jian Liu</strong>
     ·
