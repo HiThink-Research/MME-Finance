@@ -23,6 +23,7 @@ sty
 tabulate
 tiktoken
 timeout-decorator
+timm
 torch>=2.0.1
 tqdm
 transformers

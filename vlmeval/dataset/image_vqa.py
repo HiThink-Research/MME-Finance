@@ -563,6 +563,64 @@ class MMfin_CN(ImageBaseDataset):
         dump(score3, score_pth3)
         return total_score
 
+class MMfin_Binary(ImageBaseDataset):
+    TYPE = 'VQA'
+    DATASET_URL = {
+        'MMfin_Binary': 'https://opencompass.openxlab.space/utils/VLMEval/MMfin_Binary.tsv'
+    }
+    DATASET_MD5 = {'MMfin_Binary': '748aa6d4aa9d4de798306a63718455e3'}
+    def load_data(self, dataset):
+        data_path = osp.join(LMUDataRoot(), f'{dataset}.tsv')
+
+        if file_size(data_path, 'GB') > 1:
+            local_path = data_path.replace('.tsv', '_local.tsv')
+            if not osp.exists(local_path) or os.environ.get('FORCE_LOCAL', None):
+                from ..tools import LOCALIZE
+
+                LOCALIZE(data_path, local_path)
+            data_path = local_path
+        return load(data_path)
+
+    def evaluate(self, eval_file, **judge_kwargs):
+        suffix = eval_file.split('.')[-1]
+        score_pth = eval_file.replace(f'.{suffix}', '_score.csv')
+        df = pd.read_excel(eval_file)
+        y_true_l = df['answer']  # 真实答案
+        y_pred_l = df['prediction']  # 模型预测  
+        out = []
+        total = len(df)
+        correct = 0
+        tp = 0
+        fp = 0
+        fn = 0
+        for i in range(total):
+            y_pred = y_pred_l[i].strip("。")
+            y_true = y_true_l[i].strip("。")
+            if y_pred == y_true:
+                correct+=1
+            if y_pred == "是":
+                if y_true == "是":
+                    tp += 1
+                else:
+                    fp += 1
+            elif y_pred == "否":
+                if y_true == "是":
+                    fn += 1
+        # out.append(d
+        acc = correct / total if total > 0 else 0
+        f1 = (2 * tp / (2 * tp + fp + fn)) if (2 * tp + fp + fn) > 0 else 0
+        score = {
+        "ACC": acc,
+        "F1": f1,}
+        score_df = pd.DataFrame([score])
+        dump(score_df, score_pth)
+        return score
+
+
+
+
+
+
 class MTVQADataset(ImageBaseDataset):
     TYPE = 'VQA'
     DATASET_URL = {'MTVQA_TEST': 'https://opencompass.openxlab.space/utils/VLMEval/MTVQA_TEST.tsv'}

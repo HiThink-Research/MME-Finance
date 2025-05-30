@@ -28,6 +28,7 @@ def chat_mt(model, messages, dataset_name):
         utter_stack.append(utter)
         try:
             resp = model.chat(utter_stack, dataset=dataset_name)
+            print(resp)
             utter_stack.append(dict(role='assistant', content=resp))
         except:
             resp = FAIL_MSG

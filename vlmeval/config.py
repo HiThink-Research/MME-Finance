@@ -55,7 +55,7 @@ api_models = {
     'GPT4V_HIGH': partial(GPT4V, model='gpt-4-1106-vision-preview', temperature=0, img_size=-1, img_detail='high', retry=10),
     'GPT4V_20240409': partial(GPT4V, model='gpt-4-turbo-2024-04-09', temperature=0, img_size=512, img_detail='low', retry=10),
     'GPT4V_20240409_HIGH': partial(GPT4V, model='gpt-4-turbo-2024-04-09', temperature=0, img_size=-1, img_detail='high', retry=10),
-    'GPT4o': partial(GPT4V, model='gpt-4o-2024-05-13', temperature=0, img_size=512, img_detail='low', retry=10),
+    'GPT4o': partial(GPT4V, model='gpt-4o-2024-05-13', temperature=0, img_size=-1, img_detail='high', retry=10),
     'GPT4o_HIGH': partial(GPT4V, model='gpt-4o-2024-05-13', temperature=0, img_size=-1, img_detail='high', retry=10),
     'GPT4o_20240806': partial(GPT4V, model='gpt-4o-2024-08-06', temperature=0, img_size=-1, img_detail='high', retry=10),
     'GPT4o_MINI': partial(GPT4V, model='gpt-4o-mini-2024-07-18', temperature=0, img_size=-1, img_detail='high', retry=10),
@@ -63,6 +63,7 @@ api_models = {
     'GeminiPro1-0': partial(GeminiProVision, model='gemini-1.0-pro', temperature=0, retry=10),  # now GeminiPro1-0 is only supported by vertex backend
     'GeminiPro1-5': partial(GeminiProVision, model='gemini-1.5-pro', temperature=0, retry=10),
     'GeminiFlash1-5': partial(GeminiProVision, model='gemini-1.5-flash', temperature=0, retry=10),
+    'Gemini-2.5-pro': partial(GeminiProVision, model='gemini-2.5-pro-preview-03-25', temperature=0, retry=10),
     # Qwen-VL
     'QwenVLPlus': partial(QwenVLAPI, model='qwen-vl-plus', temperature=0, retry=10),
     'QwenVLMax': partial(QwenVLAPI, model='qwen-vl-max', temperature=0, retry=10),
@@ -78,7 +79,8 @@ api_models = {
     'Claude3V_Opus': partial(Claude3V, model='claude-3-opus-20240229', temperature=0, retry=10),
     'Claude3V_Sonnet': partial(Claude3V, model='claude-3-sonnet-20240229', temperature=0, retry=10),
     'Claude3V_Haiku': partial(Claude3V, model='claude-3-haiku-20240307', temperature=0, retry=10),
-    'Claude3-5V_Sonnet': partial(Claude3V, model='claude-3-5-sonnet-20240620', temperature=0, retry=10),
+    'Claude3-5V_Sonnet_20240620': partial(Claude3V, model='claude-3-5-sonnet-20240620', temperature=0, retry=10),
+    "Claude3-5V_Sonnet": partial( Claude3V, model="claude-3-5-sonnet-20241022",temperature=0,retry=10),
     # GLM4V
     'GLM4V': partial(GLMVisionAPI, model='glm4v-biz-eval', temperature=0, retry=10),
     # CongRong
@@ -156,6 +158,12 @@ internvl_series = {
     'InternVL2-26B': partial(InternVLChat, model_path='OpenGVLab/InternVL2-26B', version='V2.0'),
     'InternVL2-40B': partial(InternVLChat, model_path='OpenGVLab/InternVL2-40B', version='V2.0', load_in_8bit=True),
     'InternVL2-76B': partial(InternVLChat, model_path='OpenGVLab/InternVL2-Llama3-76B', version='V2.0'),
+    'InternVL3-2B': partial(InternVLChat, model_path='InternVL3-2B', version='V3.0'),
+    'InternVL3-8B': partial(InternVLChat, model_path='InternVL3-8B', version='V3.0'),
+    'InternVL3-9B': partial(InternVLChat, model_path='/mnt/data/model/chat/multimodal-models/InternVL3-9B', version='V3.0'),
+    'InternVL3-14B': partial(InternVLChat, model_path='InternVL3-14B', version='V3.0'),
+    'InternVL3-38B': partial(InternVLChat, model_path='InternVL3-38B', version='V3.0'),
+    'InternVL3-78B': partial(InternVLChat, model_path='InternVL3-78B', version='V3.0'),
 }
 
 yivl_series = {
@@ -261,8 +269,18 @@ qwen2vl_series = {
     'Qwen2-VL-2B-Instruct-AWQ': partial(Qwen2VLChat, model_path='Qwen/Qwen2-VL-2B-Instruct-AWQ', min_pixels=1280*28*28, max_pixels=16384*28*28),
     'Qwen2-VL-2B-Instruct-GPTQ-Int4': partial(Qwen2VLChat, model_path='Qwen/Qwen2-VL-2B-Instruct-GPTQ-Int4', min_pixels=1280*28*28, max_pixels=16384*28*28),
     'Qwen2-VL-2B-Instruct-GPTQ-Int8': partial(Qwen2VLChat, model_path='Qwen/Qwen2-VL-2B-Instruct-GPTQ-Int8', min_pixels=1280*28*28, max_pixels=16384*28*28),
-}
 
+}
+qwen25vl_series = {
+
+
+    'Qwen2.5-VL-7B-Instruct': partial(Qwen2_5VLChat, model_path='Qwen/Qwen2.5-VL-7B-Instruct', min_pixels=1280*28*28, max_pixels=16384*28*28),
+    'Qwen2.5-VL-72B-Instruct': partial(Qwen2_5VLChat, model_path='Qwen/Qwen2.5-VL-72B-Instruct', min_pixels=1280*28*28, max_pixels=16384*28*28),
+    'Qwen2.5-VL-3B-Instruct': partial(Qwen2_5VLChat, model_path='Qwen/Qwen2.5-VL-3B-Instruct', min_pixels=1280*28*28, max_pixels=16384*28*28),
+    'Qwen2.5-VL-32B-Instruct': partial(Qwen2_5VLChat, model_path='Qwen/Qwen2.5-VL-32B-Instruct', min_pixels=1280*28*28, max_pixels=16384*28*28),
+
+
+}
 slime_series = {
     'Slime-7B': partial(SliME, model_path='yifanzhang114/SliME-vicuna-7B'),
     'Slime-8B': partial(SliME, model_path='yifanzhang114/SliME-Llama3-8B'),

@@ -151,7 +151,7 @@ class InternVLChat(BaseModel):
         # Replacement pattern to remove the hyphen (Image-1 -> Image1)
         self.reverse_replacement = r'Image\1'
 
-        if listinstr(['InternVL2-Llama3-76B'], model_path):
+        if listinstr(['InternVL2-Llama3-76B','InternVL3-78B','InternVL3-38B'], model_path):
             device_map = split_model(model_path.split('/')[-1])
             self.model = AutoModel.from_pretrained(
                 model_path,
@@ -266,7 +266,7 @@ class InternVLChat(BaseModel):
         elif dataset is not None and listinstr(['DocVQA_VAL', 'DocVQA_TEST'], dataset):
             self.max_num = 18
         elif dataset is not None and listinstr(['InfoVQA_VAL', 'InfoVQA_TEST', 'OCRBench',
-                                                'HRBench4K', 'HRBench8K'], dataset):
+                                                'HRBench4K', 'HRBench8K', 'MMfin', 'MMfin_CN','MMfin_MT_CN'], dataset):
             self.max_num = 24
         elif dataset is not None and listinstr(['MMBench-Video', 'Video-MME', 'Video'], dataset):
             self.max_num = 1
@@ -350,7 +350,7 @@ class InternVLChat(BaseModel):
         else:
             pixel_values = None
             num_patches_list = []
-
+        print(prompt)
         with torch.no_grad():
             response = self.model.chat(
                 self.tokenizer,
@@ -370,6 +370,8 @@ class InternVLChat(BaseModel):
         elif self.version == 'V1.5':
             return self.generate_v1_5(message, dataset)
         elif self.version == 'V2.0':
+            return self.generate_v2(message, dataset)
+        elif self.version == 'V3.0':
             return self.generate_v2(message, dataset)
         else:
             raise ValueError(f'Unsupported version: {self.version}')
@@ -466,7 +468,11 @@ class InternVLChat(BaseModel):
         elif self.version == 'V1.5':
             raise ValueError(f'Unsupported version for Multi-Turn: {self.version}')
         elif self.version == 'V2.0':
-            kwargs_default = dict(do_sample=False, max_new_tokens=512, top_p=None, num_beams=1)
+            kwargs_default = dict(do_sample=False, max_new_tokens=1024, top_p=None, num_beams=1)
+            self.kwargs = kwargs_default
+            return self.chat_inner_v2(message, dataset)
+        elif self.version == 'V3.0':
+            kwargs_default = dict(do_sample=False, max_new_tokens=1024, top_p=None, num_beams=1)
             self.kwargs = kwargs_default
             return self.chat_inner_v2(message, dataset)
         else:
