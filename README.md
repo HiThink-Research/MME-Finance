@@ -1,5 +1,7 @@
 <p align="center">
-  <h1 align="center">MME-Finance: A Multimodal Finance Benchmark for Expert-level Understanding and Reasoning</h1>
+  <h1 align="center">
+    <img src="static/logo.png" alt="BizFinBench logo" height="40" style="position:relative; top:6px;">
+  MME-Finance: A Multimodal Finance Benchmark for Expert-level Understanding and Reasoning</h1>
     <p align="center">
     <strong>Ziliang Gan</strong>
     ,
