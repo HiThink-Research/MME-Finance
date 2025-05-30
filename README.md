@@ -2,24 +2,23 @@
   <h1 align="center">MME-Finance: A Multimodal Finance Benchmark for Expert-level Understanding and Reasoning</h1>
     <p align="center">
     <strong>Ziliang Gan</strong>
-    ·
+    ,
     <strong>Dong Zhang</strong>
-    ·
+    ,
     <strong>Haohan Li</strong>
-    ·
+    ,
     <strong>Jian Liu</strong>
-    ·
+    ,
     <strong>Ji Liu</strong>
-    ·
+    ,
      <strong>Haipang Wu</strong>
-      ·
+    ,
      <strong>Chaoyou Fu</strong>
-    ·
+    ,
      <strong>Zenglin Xu</strong>
-    ·
+    ,
     <br>
      <strong>Rongjunchen Zhang</strong><sup>♠</sup>,
-     ·
      <strong>Yong Dai</strong>
   </p>
   <div class="is-size-5 publication-authors" style="margin-top: 10px;">
