@@ -50,11 +50,12 @@ class ImageBaseDataset:
         if 'image' in data:
             data['image'] = [str(x) for x in data['image']]
             image_map = {x: y for x, y in zip(data['index'], data['image'])}
-            for k in image_map:
-                if len(image_map[k]) <= 64:
-                    idx = image_map[k]
-                    assert idx in image_map and len(image_map[idx]) > 64
-                    image_map[k] = image_map[idx]
+            
+            # for k in image_map:
+            #     if len(image_map[k]) <= 64:
+            #         idx = image_map[k]
+            #         assert idx in image_map and len(image_map[idx]) > 64
+            #         image_map[k] = image_map[idx]
 
             images = [toliststr(image_map[k]) for k in data['index']]
             data['image'] = [x[0] if len(x) == 1 else x for x in images]
@@ -110,8 +111,9 @@ class ImageBaseDataset:
                         decode_base64_to_image_file(img, path)
                     tgt_path.append(path)
             else:
-                tgt_path = osp.join(self.img_root, f"{line['index']}.jpg")
-                if not read_ok(tgt_path):
+                # tgt_path = osp.join(self.img_root, f"{line['index']}.jpg")
+                tgt_path = osp.join(self.img_root, f"{line['image']}")
+                if not read_ok(tgt_path):           
                     decode_base64_to_image_file(line['image'], tgt_path)
                 tgt_path = [tgt_path]
         else:

@@ -6,9 +6,10 @@ from .image_yorn import ImageYORNDataset
 from .image_mcq import (
     ImageMCQDataset, MMMUDataset, CustomMCQDataset, MUIRDataset, GMAIMMBenchDataset, MMERealWorld, HRBenchDataset
 )
-from .image_mt import MMDUDataset
+from .image_mt import MMDUDataset,MMfin_MT_CN_Dataset
 from .image_vqa import (
-    ImageVQADataset, MathVision, OCRBench, MathVista, LLaVABench, MMVet, MMfin, MMfin_CN, MTVQADataset, TableVQABench,
+    ImageVQADataset, MathVision, OCRBench, MathVista, LLaVABench, MMVet, MMfin, MMfin_Binary,MMfin_CN,
+    MTVQADataset, TableVQABench,
     CustomVQADataset, CRPE
 )
 
@@ -114,7 +115,8 @@ class ConcatDataset(ImageBaseDataset):
 # Add new supported dataset class here
 IMAGE_DATASET = [
     ImageCaptionDataset, ImageYORNDataset, ImageMCQDataset, ImageVQADataset, MathVision,
-    MMMUDataset, OCRBench, MathVista, LLaVABench, MMVet, MMfin, MMfin_CN, MTVQADataset, TableVQABench,
+    MMMUDataset, OCRBench, MathVista, LLaVABench, MMVet, MMfin, MMfin_CN, MMfin_Binary,MMfin_MT_CN_Dataset,
+    MTVQADataset, TableVQABench,
     MMLongBench, VCRDataset, MMDUDataset, DUDE, SlideVQA, MUIRDataset,
     GMAIMMBenchDataset, MMERealWorld, HRBenchDataset, CRPE
 ]

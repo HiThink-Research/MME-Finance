@@ -12,8 +12,11 @@ class ImageMTDataset(ImageBaseDataset):
         if isinstance(line, int):
             line = self.data.iloc[line]
 
+        # if self.meta_only:
+        #     tgt_path = toliststr(line['image_path'])
         if self.meta_only:
-            tgt_path = toliststr(line['image_path'])
+            # add self.img_root
+            tgt_path = [osp.join(self.img_root, path) for path in toliststr(line['image_path'])]
         else:
             tgt_path = self.dump_image(line)
 
@@ -110,6 +113,87 @@ class MMDUDataset(ImageMTDataset):
         indices = [i for i in indices if i not in ans]
 
         from .utils.mmdu import mmdu_score
+
+        if len(indices):
+            new_results = track_progress_rich(
+                mmdu_score,
+                tups,
+                nproc=nproc,
+                chunksize=nproc,
+                keys=indices,
+                save=tmp_file,)
+            ans = load(tmp_file)
+            for k, v in zip(indices, new_results):
+                assert k in ans
+
+        metric = self.calculat_metric(ans)
+        dump(metric, score_file)
+        return metric
+
+
+
+class MMfin_MT_CN_Dataset(ImageMTDataset):
+
+    DATASET_URL = {'MMfin_MT_CN': 'https://opencompass.openxlab.space/utils/VLMEval/MMfin_MT_CN.tsv'}
+    DATASET_MD5 = {'MMfin_MT_CN': '848b635a88a078f49aebcc6e39792061'}
+    DIMS = [
+        'Creativity', 'Richness', 'Visual Perception', 'Logical Coherence',
+        'Answer Accuracy', 'Image Relationship Understanding', 'Overall Score'
+    ]
+
+    def calculat_metric(self, ans):
+        all = defaultdict(lambda: 0)
+        tot = defaultdict(lambda: 0)
+        valid = defaultdict(lambda: 0)
+        for k in ans:
+            res = ans[k]['res']
+            assert isinstance(res, pd.DataFrame)
+            lt = len(res)
+            for i in range(lt):
+                line = res.iloc[i]
+                for k in self.DIMS:
+                    tot[k] += 1
+                    if k in line and line[k] is not None:
+                        try:
+                            score = int(line[k])
+                            score = np.clip(score, 0, 10)
+                            all[k] += score
+                            valid[k] += 1
+                        except Exception as e:
+                            print(f'Failed to parse the score: {str(e)}')
+        print(all)
+        sp1 = {'set': 'all'}
+        sp1.update({k: all[k] / tot[k] * 10 for k in self.DIMS})
+        sp2 = {'set': 'valid'}
+        sp2.update({k: all[k] / valid[k] * 10 for k in self.DIMS})
+
+        return pd.DataFrame([sp1, sp2])
+
+    def evaluate(self, eval_file, **judge_kwargs):
+        suffix = eval_file.split('.')[-1]
+        model = judge_kwargs['model']   #gpt-4o
+
+        tmp_file = eval_file.replace(f'.{suffix}', f'_{model}.pkl')
+        score_file = eval_file.replace(f'.{suffix}', f'_{model}_score.csv')
+        nproc = judge_kwargs.pop('nproc', 4)
+
+        data = load(eval_file)
+        model = judge_kwargs.pop('model', 'gpt-4o')
+        judge_model = build_judge(model=model, **judge_kwargs)
+
+        lt = len(data)
+        lines = [data.iloc[i] for i in range(lt)]
+        tups = [(judge_model, line) for line in lines]
+        indices = [line['index'] for line in lines]
+
+        ans = {}
+        if osp.exists(tmp_file):
+            ans = load(tmp_file)
+
+        tups = [x for x, i in zip(tups, indices) if i not in ans]
+        indices = [i for i in indices if i not in ans]
+
+        from .utils.mmdu import mmdu_score #mmdu 调用 misc get_gpt_response 里面也有build judge 
 
         if len(indices):
             new_results = track_progress_rich(

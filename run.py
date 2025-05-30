@@ -115,7 +115,8 @@ def main():
 
             if model is None:
                 model = model_name  # which is only a name
-
+            # if dataset.TYPE == 'VQA' : 
+            #     result_file = result_file.replace('.xlsx', '.tsv')
             # Perform the Inference
             if dataset.MODALITY == 'VIDEO':
                 model = infer_data_job_video(
@@ -162,8 +163,10 @@ def main():
                     judge_kwargs['model'] = 'chatgpt-0125'
                 elif listinstr(['MMVet', 'MathVista', 'LLaVABench', 'MMBench-Video', 'MathVision'], dataset_name):
                     judge_kwargs['model'] = 'gpt-4-turbo'
-                elif listinstr(['MMLongBench', 'MMDU', 'DUDE', 'DUDE_MINI', 'SLIDEVQA', 'SLIDEVQA_MINI', 'MMfin', 'MMfin_CN'], dataset_name):
+                elif listinstr(['MMLongBench', 'MMDU', 'DUDE', 'DUDE_MINI', 'SLIDEVQA', 'SLIDEVQA_MINI', 'MMfin', 'MMfin_CN','MMfin_MT_CN'], dataset_name):
                     judge_kwargs['model'] = 'gpt-4o'
+                # elif listinstr(['Circle'], dataset_name):
+                #     judge_kwargs['model'] = 'gpt-4o'
             if 'OPENAI_API_KEY_JUDGE' in os.environ and len(os.environ['OPENAI_API_KEY_JUDGE']):
                 judge_kwargs['key'] = os.environ['OPENAI_API_KEY_JUDGE']
             if 'OPENAI_API_BASE_JUDGE' in os.environ and len(os.environ['OPENAI_API_BASE_JUDGE']):
