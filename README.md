@@ -17,10 +17,16 @@
     ·
      <strong>Zenglin Xu</strong>
     ·
-     <strong>Rongjunchen Zhang</strong>
+     <strong>Rongjunchen Zhang</strong><sup>♠</sup>,
      ·
      <strong>Yong Dai</strong>
   </p>
+  <div class="is-size-5 publication-authors" style="margin-top: 10px;">
+        <span class="author-block">
+            <sup>♠</sup>Corresponding author, zhangrongjunchen@myhexin.com
+        </span>
+    </div>
+    <br>
   📖<a href="https://arxiv.org/abs/2411.03314">Paper</a> |🏠<a href="https://hithink-research.github.io/MME-Finance/">Homepage</a></h3>|🤗<a href="https://huggingface.co/datasets/hithink-ai/MME-Finance">Huggingface</a></h3>
 <div align="center"></div>
 <p align="center">
