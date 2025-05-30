@@ -7,7 +7,7 @@
     ,
     <strong>Haohan Li</strong>
     ,
-    <strong>Jian Liu</strong>
+    <strong>Yang Wu</strong>
     ,
     <strong>Ji Liu</strong>
     ,
