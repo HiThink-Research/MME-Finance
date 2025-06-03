@@ -54,19 +54,18 @@
                     <h1 class="title is-2 publication-title">A Multimodal Finance Benchmark for Expert-level Understanding and Reasoning</h1>
                     <div class="is-size-5 publication-authors">
             <span class="author-block">
-              Ziliang Gan<sup>1</sup> </a>,</span>
-                        <span class="author-block">
-              Yu Lu<sup>1</sup></a>, Dong Zhang<sup>1</sup>, Haohan Li<sup>1</sup>,  Che Liu<sup>2</sup>, Jian Liu<sup>3</sup>, 
+              Ziliang Gan<sup>1</sup> </a>,
+               Dong Zhang<sup>1</sup>, Haohan Li<sup>1</sup>, Yang Wu<sup>1</sup>, Xueyuan Lin<sup>4，1</sup>, Ji Liu<sup>1</sup>,
               Haipang Wu<sup>1</sup> </a>,
             </span>
             <br>
             <span class="author-block">
-                Chaoyou Fu<sup>4</sup>, Zenglin Xu<sup>5</sup>, Rongjunchen Zhang<sup>1</sup>, Yong Dai<sup>1</sup>
+                Chaoyou Fu<sup>3</sup>, Zenglin Xu<sup>4</sup>, Rongjunchen Zhang<sup>1</sup>, Yong Dai<sup>1</sup>
             </span>
                     </div>
                     <div class="is-size-5 publication-authors" style="margin-top: 10px;">
                         <span class="author-block">
-                            <sup>1</sup>Hithink Research, <sup>2</sup>Imperical College London, <sup>3</sup>Beihang University, <sup>4</sup>Nanjing University, <sup>5</sup>Fudan University 
+                            <sup>1</sup>Hithink Research, <sup>2</sup>Imperical College London, <sup>3</sup>Nanjing University, <sup>4</sup>Fudan University, <sup>5</sup>The HongKong University of Science and Technology (Guangzhou), <sup>6</sup>IDEA Research
                         </span>
 
                     </div>
@@ -85,6 +84,8 @@
       <!-- HuggingFace Link. -->
       <span class="link-block"> <a href="https://huggingface.co/datasets/hithink-ai/MME-Finance"
            class="external-link button is-normal is-rounded is-dark"><span class="icon">🤗</span><span>Space</span> </a></span>
+      <span class="link-block"> <a href="https://github.com/HiThink-Research/MME-Finance/blob/main/Supplementary_pdf_ACMMM.pdf"
+           class="external-link button is-normal is-rounded is-dark"> <span class="icon">📖 </span> <span>Supplementary PDF for ACM MM</span> </a> </span>
     </div>
       </div>
 
@@ -98,8 +99,11 @@
                 <h2 class="title is-2">Abstract</h2>
                 <div class="content has-text-justified">
                     <p>
-                        In recent years, multimodal benchmarks for general domains have guided the rapid development of multimodal models on general tasks. However, the financial field has its peculiarities. It features unique graphical images (e.g., candlestick charts, technical indicator charts) and possesses a wealth of specialized financial knowledge (e.g., futures, turnover rate). Therefore, benchmarks from general fields often fail to measure the performance of multimodal models in the financial domain, and thus cannot effectively guide the rapid development of large financial models. To promote the development of large financial multimodal models, we propose MME-Finance, an open-ended and practical usage-oriented Visual Question Answering (VQA) benchmark. The characteristics of our benchmark are finance and expertise, which include constructing charts that reflect the actual usage needs of users (e.g., computer screenshots and mobile photography), creating questions according to the preferences in financial domain inquiries, and annotating questions by experts with 10+ years of experience in the financial industry.
-Additionally, we have developed a custom-designed financial evaluation system in which visual information is first introduced in the multi-modal evaluation process. Extensive experimental evaluations of 19 mainstream MLLMs are conducted to test their perception, reasoning, and cognition capabilities. The results indicate that models that perform well on general benchmarks cannot do well on MME-Finance; for instance, the top-performing open-source and closed-source models obtain 65.69 (Qwen2VL-72B) and 63.18 (GPT-4o), respectively. Their performance is particularly poor in categories most relevant to finance, such as candlestick charts and technical indicator charts. Therefore, we hope to open-source our benchmark to foster the development of multimodal models in the financial domain.
+                        To date, there is a notable lack of rigorous benchmarks that assess Multimodal Large Language Models (MLLMs) within the financial domain，a field characterized by specialized financial charts and complex domain-specific expertise.
+  To address this gap, we introduce MME-Finance, the first comprehensive bilingual multimodal benchmark tailored for financial analysis. MME-Finance comprises 4,751 meticulously curated samples, encompassing 2,274 open-ended questions, 2,000 binary-choice questions, and 477 multi-turn questions.
+  To mitigate bias when LLMs act as judges, we also created an evaluation framework that strengthens alignment with human judgments by embedding visual context into the multimodal assessment pipeline. A comprehensive evaluation of 31 popular MLLMs has been conducted to assess their perception, reasoning, and cognitive capabilities. 
+  Gemini2.5Pro achieves highest accuracy of 79.28\% and 85.71\% on the open-ended questions and multi-turn questions, respectively. Among open-source models, InternVL3-78B attains 71.24 \% accuracy on the open-ended question, whereas Qwen2.5-VL-72B achieves an F1 score of 88.73 \% on the binary-choice question.
+  The results indicate that state-of-the-art MLLMs demonstrate considerable overall competence, yet exhibit significant deficiencies in fine-grained visual perception and the understanding of domain-specific financial images.
                     </p>
                 </div>
             </div>
@@ -170,13 +174,15 @@ Additionally, we have developed a custom-designed financial evaluation system in
                 <h4 class="title is-3">•Statistics </h4>
                     <div class="content has-text-justified">
                         <p>
-                            This is the statistics results of MME-Finance. MME-Finance contains 1,171 image-question-answer pairs spanning 11 distinct tasks, categorized into 3 ability levels. 
-                            The number of samples per task varies from 18 to 229, with the Spatial Awareness task containing the most and Reason Explanatio the fewest. 
-                            The image below illustrates the distribution of the 6 image types and 4 image styles. The statistical charts account for the main proportion, while mixed charts are the least.
-                            Computer screenshots and mobile photographs constitute similar proportions, representing 47.3% and 40.5% of the total, respectively. 
-                            Vertical and horizontal mobile screenshots contain approximately sample sizes.
+                            This is the statistics results of open-ended version of MME-Finance. MME-Finance contains 1,171 English and 1,103 Chinese image-question-answer pairs spanning 11 distinct tasks, categorized into 3 ability levels. 
+                            In addition, MME-Finance incorporates questions aimed at evaluating hallucinations of MLLMs. 
+                            The number of samples per task varies from 42 to 395, with the "Spatial Awareness" task containing the most and "Reason Explanation" the fewest. 
+                            The above image illustrates the distribution of the 6 image types, where statistical charts account for the main proportion, while mixed charts are the least. 
+                            The below image displays the distribution of 4 image styles. Computer screenshots and mobile photographs constitute similar proportions, representing 42.9% and 40.5% of the total, respectively. 
+                            Horizontal mobile screenshots contain fewest samples.
+                            Vertical and horizontal mobile screenshots contain approximately sample sizes. 
                         </p>
-                    <img class="columns is-centered has-text-centered" src="./static/images/statistics.png" alt="Teaser" width="95%"
+                    <img class="columns is-centered has-text-centered" src="./static/images/stat.png" alt="Teaser" width="95%"
                          style="margin:0 auto">
                     <br>
                     <figcaption>
@@ -198,14 +204,8 @@ Additionally, we have developed a custom-designed financial evaluation system in
             <div class="column is-full-width"> 
                 <div class="content has-text-justified">
                     <p>
-                        The table below shows the results of various MLLMs on MME-Finance from the view of each task. 
-                        Performance across the MLLMs varies significantly, with many models exhibiting low accuracy, 
-                        highlighting the challenging nature of the MME-Finance benchmark. Among the evaluated models, 
-                        QwenVL2-72B achieves the best overall performance with 65.69% accuracy, excelling in most tasks, 
-                        particularly OCR and ANC. Proprietary MLLM, i.e., GPT-4o, ranks second overall but surpasses QwenVL2-72B in all cognition-related tasks. 
-                        This suggests that GPT-4o’s superior language processing capabilities give it an advantage in tasks requiring complex reasoning. 
-                        Additionally, our findings support the observation from MMBench that the size of the language model has a significant impact on performance. 
-                        For instance, larger models in the same series, such as LLaVA-NEXT-13B compared to LLaVA-NEXT-7B, consistently demonstrate better results.
+                        The below table shows the results of various MLLMs on English open-ended version, binary-choice version, and multi-turn version of MME-Finance. For the open-ended version, performance across the MLLMs varies significantly, with many models exhibiting low accuracy, highlighting the challenging nature of the MME-Finance. Among all the evaluated models, Gemini2.5Pro achieves the best overall performance with 79.28% accuracy, excelling in most tasks, particularly OCR and SA. GPT-4o and InternVL3-78B rank second and third, respectively. 
+Furthermore, the experimental results support the observation of MMBench that the size of the language model has a significant impact on performance. For the binary-choice version of MME-Finance, the results of all the models are quite good. GPT-4o, Qwen2.5VL-72B, and Gemini2.5Pro achieve the top three results. For the multi-turn version, Gemini2.5Pro is the best, followed by Claude3.5-sonnet, and then Qwen2.5VL-72B. Overall, for the MME-Finance, the proprietary models demonstrated superior performance. Nevertheless, the leading open-source model exhibited only a marginal difference in effectiveness.
                     </p>
                     <img class="columns is-centered has-text-centered" src="./static/images/results.png" alt="Teaser" width="95%"
                          style="margin:0 auto">
@@ -221,17 +221,29 @@ Additionally, we have developed a custom-designed financial evaluation system in
         </div>
         <div class="columns is-centered">
             <div class="column is-full-width"> 
-                <h3 class="title is-4">•Image Caption</h3>
+                <h3 class="title is-4">•Open-ended version</h3>
                     <div class="content has-text-justified">
                     <img class="columns is-centered has-text-centered" src="./static/images/image_caption.png" alt="Teaser" width="95%"
                          style="margin:0 auto">
                     <br>
                     </div>
-                <h3 class="title is-4">• Spatial Awareness</h3>
+                <!-- <h3 class="title is-4">•Spatial Awareness</h3>
                     <div class="content has-text-justified">
                     <img class="columns is-centered has-text-centered" src="./static/images/spatial_awareness.png" alt="Teaser" width="95%"
                          style="margin:0 auto">
                     <br>
+                    </div> -->
+                <h3 class="title is-4">•Binary-choice version</h3>
+                    <div class="content has-text-justified">
+                    <img class="columns is-centered has-text-centered" src="static/images/true_false.png" alt="Teaser" width="95%"
+                         style="margin:0 auto">
+                    <br>
+                    </div>
+                <h3 class="title is-4">•Multi-turn version</h3>
+                    <div class="content has-text-justified">
+                    <img class="columns is-centered has-text-centered" src="static/images/multi-turn.png" alt="Teaser" width="95%"
+                         style="margin:0 auto">
+                <br>
                     </div>
                     </div>
 </section>
