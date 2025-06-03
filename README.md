@@ -30,6 +30,9 @@
     </div>
     <br>
   📖<a href="https://arxiv.org/abs/2411.03314">Paper</a> |🏠<a href="https://hithink-research.github.io/MME-Finance/">Homepage</a></h3>|🤗<a href="https://huggingface.co/datasets/hithink-ai/MME-Finance">Huggingface</a></h3>
+  
+  💾[Supplementary Material for paper submitted to ACM MM 2025](Supplementary_pdf_ACMMM.pdf)
+  
 <div align="center"></div>
 <p align="center">
   <p>
@@ -46,8 +49,6 @@ Benchmarks from general fields often fail to measure the performance of multimod
 - 🔥 <strong>Bilingual multimodal financial benchmark:</strong> MME-Finance is the first Bilingual multimodal financial benchmark which comprises 1,171 English and 1,103 Chinese open-ended questions, covering diverse financial image types and various multimodal capabilities. 
 - 🔥 <strong>Evaluation strategy: </strong> MME-Finance proposes a Elaborate evaluation strategy that taking image into consideration, and has a high consistency with humans. It can serve as a reference for evaluating MLLMs for other works.
 - 🔥 <strong>Valuable insights: </strong>We conduct extensive evaluation on 19 MLLMs based on MME-Finance, revealing critical insights about the strengths and shortcomings of the current MLLMs in financial applications.
-
-[下载/查看PDF文件](Supplementary_pdf_ACMMM.pdf)
 
 ## 🛠️ Usage
 
