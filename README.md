@@ -31,8 +31,6 @@
     <br>
   📖<a href="https://arxiv.org/abs/2411.03314">Paper</a> |🏠<a href="https://hithink-research.github.io/MME-Finance/">Homepage</a></h3>|🤗<a href="https://huggingface.co/datasets/hithink-ai/MME-Finance">Huggingface</a></h3>
   
-  💾[Supplementary Material for the paper submitted to ACM MM 2025](Supplementary_pdf_ACMMM.pdf)
-  
 <div align="center"></div>
 <p align="center">
   <p>
