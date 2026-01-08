@@ -39,6 +39,7 @@ In recent years, multimodal benchmarks for general domains have guided the rapid
 Benchmarks from general fields often fail to measure the performance of multimodal models in the financial domain, and thus cannot effectively guide the rapid development of large financial models. To promote the development of large financial multimodal models, we introduce <strong>MME-Finance</strong>, the first comprehensive bilingual multimodal benchmark designed for financial analysis. 
 
 ## 📢 News 
+- 🚀 [01/08/2026] We have released a new benchamrk **FinMTM**. Welcome to visit <a href="[https://github.com/HiThink-Research/FinMTM]">.
 - 🚀 [08/01/2025] Our paper has been accepted for ACM MM 2025.
 - 🚀 [05/30/2025] We released <strong>MME-Finance-MT</strong> multi-turn question benchmark and <strong>MME-Finance-Binary</strong> benchmark.
 - 🚀 [01/08/2025] <strong><a href="https://huggingface.co/datasets/hithink-ai/MME-Finance">We have released all samples in both English and Chinese.</a></strong>
